@@ -33,5 +33,4 @@ const markup = images
   })
   .join("");
 
-// Вставляємо весь HTML однією операцією
 galleryList.insertAdjacentHTML("beforeend", markup);
