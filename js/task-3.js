@@ -1,36 +1,12 @@
-class StringBuilder {
-  #value;
+// 1. Знаходимо елементи в DOM
+const inputEl = document.querySelector("#name-input");
+const outputEl = document.querySelector("#name-output");
 
-  constructor(initialValue) {
-    this.#value = initialValue;
-  }
+// 2. Додаємо слухача події 'input'
+inputEl.addEventListener("input", () => {
+  // 3. Беремо значення з інпуту та прибираємо пробіли
+  const name = inputEl.value.trim();
 
-  getValue() {
-    return this.#value;
-  }
-
-  padEnd(str) {
-    this.#value += str;
-  }
-
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-
-  padBoth(str) {
-    this.#value = str + this.#value + str;
-  }
-}
-
-//Код для перевірки
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+  // 4. Перевіряємо: якщо name порожнє — показуємо "Anonymous"
+  outputEl.textContent = name === "" ? "Anonymous" : name;
+});
