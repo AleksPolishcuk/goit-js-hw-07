@@ -33,6 +33,36 @@ button {
   border: none;
 }
 
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+
+.task-item {
+  font-size: 18px;
+  text-decoration: none;
+  color: #4e75ff;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #4e75ff;
+}
+
+.task-item,
+.back-link:hover {
+  color: #6c8cff;
+}
+
 /* List 1 */
 .center-wrapper {
   display: flex;
